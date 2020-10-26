@@ -1,5 +1,8 @@
 package fileio;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -48,5 +51,25 @@ public class EmployeePayrollService
 		{
 			new EmployeePayRollFileService().writeData(employeePayrollDataList);
 		}
+	}
+	
+	public void printData(IOService ioService)
+	{
+		if(ioService.equals(IOService.FILE_IO))
+		{
+			new EmployeePayRollFileService().printData();
+		}
+	}
+	
+	public long countEntries(IOService ioService)
+	{
+		long entries = 0;
+		
+		if(ioService.equals(IOService.FILE_IO))
+		{
+			entries = new EmployeePayRollFileService().countEntries();
+		}
+		
+		return entries;
 	}
 }

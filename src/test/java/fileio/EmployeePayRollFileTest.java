@@ -1,5 +1,7 @@
 package fileio;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -20,5 +22,8 @@ public class EmployeePayRollFileTest
 		EmployeePayrollService employeePayrollService;
 		employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmpsData));
 		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
+		employeePayrollService.printData(IOService.FILE_IO);
+		long entries = employeePayrollService.countEntries(IOService.FILE_IO);
+		assertEquals(3, entries);
 	}
 }

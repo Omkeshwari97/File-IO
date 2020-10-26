@@ -1,4 +1,4 @@
-package FileIO;
+package fileio;
 
 import java.util.ArrayList;
 import java.util.List;

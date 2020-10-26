@@ -1,4 +1,4 @@
-package FileIO;
+package fileio;
 
 public class EmployeePayrollData 
 {
